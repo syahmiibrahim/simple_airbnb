@@ -1,0 +1,58 @@
+<div class="container">
+<div class="page-header">
+<h1><center><a href="/dashboard/:user_name"> AirBnB Dashboard</a></center></h1>
+</div>
+
+<div class="row">
+<div class="col-md-6">
+
+<form class="form-horizontal" action="/property/add" method="post">
+	<fieldset>
+	<div id="legend">
+		<legend class=""><h3>Add Property</h3></legend>
+	</div>
+		<div class="control-group">
+			<label class="control-label" for="title">Title:</label>
+			<div class="controls">
+				<input id="title" name="post[title]" placeholder="Any title" class="form-control input-lg" type="text">
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label class="control-label" for="address">Address:</label>
+			<div class="controls">
+				<textarea id="address" name="post[address]" class="form-control input-lg" rows="3"></textarea>
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label class="control-label" for="description">Description</label>
+			<div class="controls">
+				<textarea id="description" name="post[description]" class="form-control input-lg" rows="5"></textarea>
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label class="control-label" for="price">Price(RM):</label>
+			<div class="controls">
+				<input id="price" name="post[price]" class="form-control input-lg" type="text">
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label class="control-label" for="tag">Tag/Category:</label>
+			<div class="controls">
+				<input id="tag" name="post[tag]" class="form-control input-lg" type="text">
+			</div>
+		</div>
+		<br>
+		<div class="control-group">
+			<div class="controls">
+			<button class="btn btn-success">Add Property!</button>
+			</div>
+		</div>
+	</fieldset>
+</form>
+</div>
+</div>
+</div>
