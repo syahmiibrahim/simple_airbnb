@@ -1,13 +1,13 @@
 <div class="container">
 <div class="page-header">
-<h1><center><a href="/dashboard/:user_name"> Welcome <%=@user.name%> to Simple AirBnB!</a></center></h1>
+<h1><center><a href="/dashboard/<%= @user.name%>"> Welcome <%=@user.name.capitalize%> to Simple AirBnB!</a></center></h1>
 <center><a href="/logout"><button type="submit" class="btn btn-success">Logout</button></a></center>
 </div>
 <h4><b><center>What do you want to do?</center></b></h4>
 <center>
 <a href="/property/add"><button class="btn btn-default">Add Property</button></a>
-<a href="/property/edit"><button class="btn btn-default">Update Property</button></a>
-<a href="/property/delete">	<button class="btn btn-default">Delete Property</button></a>
+<!-- <a href="/property/edit"><button class="btn btn-default">Update Property</button></a>
+<a href="/property/delete">	<button class="btn btn-default">Delete Property</button></a> -->
 </center>
 
 <h4><b><center>Your Property list: </center></b></h4>
@@ -24,7 +24,7 @@
 	<% @prop.each do |list| %>
 	<tbody>
 	<tr>
-		<td><%= list.title %></td>
+		<td><a href="/property/details/<%= list.id %>"><%= list.title %></a></td>
 		<td><%= list.address %></td>
 		<td><%= list.description %></td>
 		<td><%= list.tags.pluck(:tag).join(", ") %></td>
