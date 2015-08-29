@@ -1,44 +1,42 @@
 <div class="container">
 <div class="page-header text-center">
-<h1><a href="/dashboard/<%= @user.name%>"> Welcome <%=@user.name.capitalize%> to Simple AirBnB!</a></h1>
+<h1><a href="/dashboard/<%= @user.name%>">AirBnb Dashboard</a></h1>
 <a href="/logout"><button type="submit" class="btn btn-success">Logout</button></a>
 </div>
 <div class="text-center">
 <h4><b>What do you want to do?</b></h4>
 <a href="/property/add"><button class="btn btn-default">Add Property</button></a>
-<a href="/property/list"><button class="btn btn-default">My Properties</button></a>
 <!-- <a href="/property/delete">	<button class="btn btn-default">Delete Property</button></a> -->
 
-<h4><b>Property list available: </b></h4>
+<h4><b>Your Property list: </b></h4>
 </div>
 <table class="table">
 	<thead>
 	<tr>
-		<th>Owner</th>
 		<th>Title</th>
 		<th>Address</th>
 		<th>Description</th>
 		<th>Price</th>
 	</tr>
 	</thead>
-	<% @prop_list.each do |list| %>
-	<tbody>	
-	<tr>	
-		<td><%= list.user.name.capitalize %></td>
+	<% @prop.each do |list| %>
+	
+	<tbody>
+	<tr>
+	<div class="text-left">
 		<td><a href="/property/details/<%= list.id %>"><%= list.title %></a></td>
 		<td><%= list.address %></td>
 		<td><%= list.description %></td>
-		<td><% # list.tags.pluck(:tag).join(", ") %></td>
-		<td><b><%= list.price %></b></td>
+		<!-- <td><%= # list.tags.pluck(:tag).join(", ") %></td> -->
+		<td><%= list.price %></td>
+	</div>
 	</tr>
 	</tbody>
+
 	<% end %>
 </table>
 
-<div class="text-center">
-<h4><b>Search properties by tag/category: </b></h4>	
-	<% @tagged.each do |list| %>
-	<a href="/tag/<%= list.tag %>"><%= list.tag.capitalize %></a>,
-	<% end %>
+
+
 </div>
 </div> <!--End of Container -->

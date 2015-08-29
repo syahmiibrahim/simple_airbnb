@@ -16,7 +16,7 @@
 <p><b> Tags : </b> <%= @property.tags.pluck(:tag).join(", ") %> </p>
 <center>	
 <a href="/property/edit/<%= @property.id %>"><button class="btn btn-default">Update Property</button></a>
-<a href="/property/delete/<%= @property.id %>">	<button class="btn btn-default">Delete Property</button></a>
+<a href="/property/delete/<%= @property.id %>">	<button class="btn btn-default" value="delete">Delete Property</button></a>
 </center>
 
 </div>

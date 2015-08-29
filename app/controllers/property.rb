@@ -76,3 +76,10 @@ get '/property/delete/:id' do
 
   redirect to "/dashboard/#{@user.name}"
 end
+
+get '/property/list' do
+  @user = User.find(session[:id])
+  @prop = @user.properties
+
+  erb :listproperty
+end

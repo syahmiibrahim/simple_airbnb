@@ -1,0 +1,37 @@
+<div class="container">
+<div class="page-header text-center">
+<h1><a href="/dashboard/<%= @user.name%>">AirBnb Dashboard</a></h1>
+<a href="/logout"><button type="submit" class="btn btn-success">Logout</button></a>
+</div>
+
+<h4><b><center>Property listed under <u><%= @tagged.tag.capitalize %></u>: </center></b></h4>
+<table class="table">
+	<thead>
+	<tr>
+		<th>Title</th>
+		<th>Address</th>
+		<th>Description</th>
+		<th>Price</th>
+	</tr>
+	</thead>
+	<% @tagged.properties.each do |list| %>
+	
+	<tbody>
+	<tr>
+	<div class="text-left">
+		<td><a href="/property/details/<%= list.id %>"><%= list.title.capitalize %></a></td>
+		<td><%= list.address %></td>
+		<td><%= list.description %></td>
+	<!-- 	<td><%= list.tags.pluck(:tag).join(", ") %></td> -->
+		<td><%= list.price %></td>
+	</div>
+	</tr>
+	</tbody>
+
+	<% end %>
+</table>
+
+
+
+</div>
+</div> <!--End of Container -->

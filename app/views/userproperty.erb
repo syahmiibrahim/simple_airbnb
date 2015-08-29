@@ -1,0 +1,40 @@
+<div class="container">
+<div class="page-header">
+<h1><center><a href="/dashboard/<%= @user.name%>"> AirBnB Dashboard</a></center></h1>
+</div>
+
+<div class="row">
+<div class="col-md-6">
+
+	<div id="legend">
+		<legend class=""><h3>Your Property List:</h3></legend>
+	</div>
+
+<table class="table">
+	<thead>
+	<tr>
+		<th>Title</th>
+		<th>Address</th>
+		<th>Description</th>
+		<th>Tag</th>
+		<th>Price</th>
+	</tr>
+	</thead>
+	<% @prop.each do |list| %>
+	<tbody>
+	<div class="text-left">
+	<tr>
+		<td><a href="/property/details/<%= list.id %>"><%= list.title %></a></td>
+		<td><%= list.address %></td>
+		<td><%= list.description %></td>
+		<td><%= list.tags.pluck(:tag).join(", ") %></td>
+		<td><%= list.price %></td>
+	</tr>
+	</div>
+	</tbody>
+	<% end %>
+</table>
+
+</div>
+</div>
+</div>
