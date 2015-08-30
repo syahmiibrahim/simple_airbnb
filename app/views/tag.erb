@@ -1,7 +1,6 @@
 <div class="container">
 <div class="page-header text-center">
 <h1><a href="/dashboard/<%= @user.name%>">AirBnb Dashboard</a></h1>
-<a href="/logout"><button type="submit" class="btn btn-success">Logout</button></a>
 </div>
 
 <h4><b><center>Property listed under <u><%= @tagged.tag.capitalize %></u>: </center></b></h4>
@@ -11,7 +10,7 @@
 		<th>Title</th>
 		<th>Address</th>
 		<th>Description</th>
-		<th>Price</th>
+		<th>Price (RM)</th>
 	</tr>
 	</thead>
 	<% @tagged.properties.each do |list| %>

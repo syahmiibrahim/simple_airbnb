@@ -1,0 +1,34 @@
+<div class="container">
+<div class="page-header text-center">
+<h1><a href="/dashboard/<%= @user.name%>">AirBnb Dashboard</a></h1>
+</div>
+<!-- <a href="/property/delete">	<button class="btn btn-default">Delete Property</button></a> -->
+<div class="text-center">
+<h4><b>Your current booking list: </b></h4>
+</div>
+<table class="table">
+	<thead>
+	<tr>
+		<th>Title</th>
+		<th>Address</th>
+		<th>Book From</th>
+		<th>Book Until</th>
+		<th>Price (RM)</th>
+	</tr>
+	</thead>
+	<% @booking.each do |list| %>
+	<tbody>
+	<tr>
+		<td><a href="/property/details/<%= list.property_id %>"><%= list.property.title %></a></td>
+		<td><%= list.property.address %></td>
+		<td><%= list.booked_from %></td>
+		<td><%= list.booked_until %></td>
+		<td><%= list.property.price %></td>
+	</tr>
+	</tbody>
+	<% end %>
+</table>
+
+
+</div>
+</div> <!--End of Container -->

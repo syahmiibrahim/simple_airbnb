@@ -32,7 +32,13 @@ end
 get '/property/details/:id' do
   @user = User.find(session[:id])
   @property = Property.find(params[:id])
-  erb :detailproperty
+  @booking = Booking.find_by(user_id: session[:id], property_id: params[:id])
+  @status = Booking.where.not(user_id: session[:id])
+  if @property[:user_id] == @user[:id]
+    erb :detailproperty
+  else
+    erb :userproperty
+  end
 end
 
 
@@ -83,3 +89,4 @@ get '/property/list' do
 
   erb :listproperty
 end
+

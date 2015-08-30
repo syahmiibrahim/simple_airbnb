@@ -1,7 +1,6 @@
 <div class="container">
 <div class="page-header text-center">
 <h1><a href="/dashboard/<%= @user.name%>">AirBnb Dashboard</a></h1>
-<a href="/logout"><button type="submit" class="btn btn-success">Logout</button></a>
 </div>
 <div class="text-center">
 <h4><b>What do you want to do?</b></h4>
@@ -16,18 +15,17 @@
 		<th>Title</th>
 		<th>Address</th>
 		<th>Description</th>
-		<th>Price</th>
+		<th>Price (RM)</th>
 	</tr>
 	</thead>
 	<% @prop.each do |list| %>
 	
 	<tbody>
 	<tr>
-	<div class="text-left">
 		<td><a href="/property/details/<%= list.id %>"><%= list.title %></a></td>
 		<td><%= list.address %></td>
 		<td><%= list.description %></td>
-		<!-- <td><%= # list.tags.pluck(:tag).join(", ") %></td> -->
+		<!-- <td><% # list.tags.pluck(:tag).join(", ") %></td> -->
 		<td><%= list.price %></td>
 	</div>
 	</tr>
@@ -35,7 +33,6 @@
 
 	<% end %>
 </table>
-
 
 
 </div>

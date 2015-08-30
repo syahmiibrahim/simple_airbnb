@@ -25,7 +25,7 @@
 		<td><%= @property.address %> </td>
 	</tr>
 
-	<tr>
+	<tr>s
 		<th>Description:</th>
 		<td><%= @property.description %> </td>
 	</tr>
@@ -34,19 +34,16 @@
 		<th>Tags:</th>
 		<td><%= @property.tags.pluck(:tag).join(", ") %> </td>
 	</tr>
-
-	<tr>
-		<th>Status: </th>
-		<% if @user.bookings.exists?(property_id: @property.id) %>
-			<td> Booked from <%= @booking.booked_from %> until <%= @booking.booked_until %>  ( <a href="/book/edit/<%= @property.id%>">Edit</a> | <a href="/book/cancel/<%= @property.id %>">Cancel </a> )</td>
-		<% elsif @status.exists? %>
-			<td> Not Available </td>
-		<% else %>
-			<td> Available | <a href="/book/new/<%= @property.id %>">Book Now</a></td>
-		<% end %>
-	</tr>
 </table>
 
+<div id="legend">
+		<legend class=""><h3>Edit Booking:</h3></legend>
+</div>
+	<form id="booking" action="/book/edit/<%= @property.id %>" method="post">
+	Book from: <input type="date" name="startdate" min="2015-01-01" max="2020-12-31" value="<%= @booking.booked_from %>" form="booking"> <br> 
+	Book until: <input type="date" name="enddate" min="2015-01-01" max="2020-12-31" value="<%= @booking.booked_until %>" form="booking"><br>
+	<center><input type="submit" value="Update Booking" form="booking"></center>
+	</form>
 </div>
 </div>
 </div>

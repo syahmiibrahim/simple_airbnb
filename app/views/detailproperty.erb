@@ -6,14 +6,35 @@
 <div class="row">
 <div class="col-md-6">
 
-	<div id="legend">
-		<legend class=""><h3>Your Property</h3></legend>
-	</div>
-<p><b> Title : </b><%= @property.title %> </p>
-<p><b> Price : </b> <%= @property.price %> </p>
-<p><b> Address : </b> <%=@property.address %> </p>
-<p><b> Description : </b> <%= @property.description %> </p>
-<p><b> Tags : </b> <%= @property.tags.pluck(:tag).join(", ") %> </p>
+<h3>Your Property</h3>
+	
+
+<table class="table">
+<tr>
+<th>Title:</th>
+<td><%= @property.title %> </td>
+</tr>
+<tr>
+<th>Price (RM):</th>
+<td><%= @property.price %> </td>
+</tr>
+<tr>
+<th>Address:</th>
+<td><%= @property.address %> </td>
+</tr>
+<tr>
+<th>Description:</th>
+<td><%= @property.description %> </td>
+</tr>
+<tr>
+<th>Tags:</th>
+<td><%= @property.tags.pluck(:tag).join(", ") %> </td>
+</tr>
+</table>
+
+
+
+
 <center>	
 <a href="/property/edit/<%= @property.id %>"><button class="btn btn-default">Update Property</button></a>
 <a href="/property/delete/<%= @property.id %>">	<button class="btn btn-default" value="delete">Delete Property</button></a>
